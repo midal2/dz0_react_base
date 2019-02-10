@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'material-ui/Tabs';
-
 // From https://github.com/oliviertassinari/react-swipeable-views
 // npm install --save react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
+import TodoSummary from './todoSummary';
 
 const styles = {
   headline: {
@@ -46,7 +46,7 @@ export default class MainMaterialTab extends Component{
           onChangeIndex={this.handleChange}
         >
           <div>
-            <h2 style={styles.headline}>현재진행중인 내역</h2>
+            <TodoSummary/>
           </div>
           <div style={styles.slide}>
             지금까지 진행한 통계내역
