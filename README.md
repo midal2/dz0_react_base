@@ -24,3 +24,7 @@
 
 4. 실행  
 ```npm start```
+
+## 기타요소
+1. Material UI 사용시 설치해야할 npm pkg
+```npm install --save material-ui```
