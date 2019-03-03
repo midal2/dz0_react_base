@@ -22,43 +22,13 @@ const styles = {
 const tilesData = [
   {
     img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Breakfast',
-    author: 'jill111',
+    title: '주식목록가져오기',
+    author: '한국증권거래소',
   },
   {
     img: 'http://image.sportsseoul.com/2017/12/07/news/20171207013514_2.jpg',
-    title: 'Tasty burger',
-    author: 'pashminu',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Camera',
-    author: 'Danson67',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Morning',
-    author: 'fancycrave1',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Hats',
-    author: 'Hans',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Honey',
-    author: 'fancycravel',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Vegetables',
-    author: 'jill111',
-  },
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
+    title: '개발관리',
+    author: '내꼬',
   },
 ];
 
@@ -67,11 +37,16 @@ export default class TodoSummary extends Component {
     super(props);
   }
 
+  // 최근수행한 창목록가져오기
+  getRecentlyList(){
+    return tilesData;
+  }
+
   render(){
     return (
       <div style={styles.root}>
         <GridList style={styles.gridList} cols={2.2}>
-          {tilesData.map((tile) => (
+          {this.getRecentlyList().map((tile) => (
             <GridTile
               key={tile.img}
               title={tile.title}

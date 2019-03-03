@@ -4,6 +4,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 // npm install --save react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
 import TodoSummary from './todoSummary';
+import MaterialMainList from './materialMainList';
+
 
 const styles = {
   headline: {
@@ -38,8 +40,8 @@ export default class MainMaterialTab extends Component{
           onChange={this.handleChange}
           value={this.state.slideIndex}
         >
-          <Tab label="할일" value={0} />
-          <Tab label="진척도" value={1} />
+          <Tab label="하고싶은것들" value={0} />
+          <Tab label="서버상황" value={1} />
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}
@@ -47,6 +49,7 @@ export default class MainMaterialTab extends Component{
         >
           <div>
             <TodoSummary/>
+            <MaterialMainList/>
           </div>
           <div style={styles.slide}>
             지금까지 진행한 통계내역
