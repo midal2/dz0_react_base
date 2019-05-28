@@ -4,7 +4,7 @@ import RecentlyProgramReducer from './reducer_recently_programs';
 
 const rootReducer = combineReducers({
   programs : ProgramReducer,
-  recently_programs: {},
+  recently_programs: RecentlyProgramReducer,
 });
 
 export default rootReducer;

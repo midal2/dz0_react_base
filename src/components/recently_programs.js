@@ -27,6 +27,7 @@ class RecentlyPrograms extends Component {
 
   // 최근수행한 창목록가져오기
   getRecentlyList(){
+    console.dir(this.props);
     return this.props.recently_programs;
   }
 

@@ -3,7 +3,7 @@ export default function (state=null, action){
     case 'PROGRAM_SELECTED':
       return action.payload;
   }
-  
+
   return [
     {
       img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
