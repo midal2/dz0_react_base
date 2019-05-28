@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import { connect } from 'react-redux';
 
 const styles = {
   root: {
@@ -19,27 +20,14 @@ const styles = {
   },
 };
 
-const tilesData = [
-  {
-    img: 'http://mail.hsc.ac.kr/help/ko/img/schedule/schedule_main00.jpg',
-    title: '주식목록가져오기',
-    author: '한국증권거래소',
-  },
-  {
-    img: 'http://image.sportsseoul.com/2017/12/07/news/20171207013514_2.jpg',
-    title: '개발관리',
-    author: '내꼬',
-  },
-];
-
-export default class TodoSummary extends Component {
+class RecentlyPrograms extends Component {
   constructor(props){
     super(props);
   }
 
   // 최근수행한 창목록가져오기
   getRecentlyList(){
-    return tilesData;
+    return this.props.recently_programs;
   }
 
   render(){
@@ -62,3 +50,9 @@ export default class TodoSummary extends Component {
     );
   }
 }
+
+function mapStateToProps(state){
+    return {recently_programs : state.recently_programs}
+}
+
+export default connect(mapStateToProps)(RecentlyPrograms);

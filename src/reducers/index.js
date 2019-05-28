@@ -1,7 +1,10 @@
 import { combineReducers } from 'redux';
+import ProgramReducer from './reducer_programs';
+import RecentlyProgramReducer from './reducer_recently_programs';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  programs : ProgramReducer,
+  recently_programs: {},
 });
 
 export default rootReducer;

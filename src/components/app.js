@@ -4,14 +4,13 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 //component 구간
-import MaterialTab from './materialTab';
-import MaterialMainList from './materialMainList';
+import MainTab from './main_tab';
 
 export default class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <MaterialTab/>
+        <MainTab/>
       </MuiThemeProvider>
     );
   }

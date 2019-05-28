@@ -3,6 +3,9 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import { connect } from 'react-redux';
+import selectProgram from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 const styles = {
   root: {
@@ -17,20 +20,7 @@ const styles = {
   },
 };
 
-const tilesData = [
-  {
-    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6MNvfp_X9R2nmHywM_V28kJWUo67sjD-k_sOTvlP1nNKdUfRE',
-    title: '주식시세',
-    author: '한국증권거래소',
-  },
-  {
-    img: 'http://thumb.mt.co.kr/06/2017/12/2017122808434873281_1.jpg',
-    title: '내가좋아하는것들',
-    author: '후후',
-  },
-];
-
-export default class MaterialMainList extends Component{
+class Programs extends Component{
   constructor(props){
     super(props);
   }
@@ -41,22 +31,34 @@ export default class MaterialMainList extends Component{
         <GridList
           cellHeight={180}
           style={styles.gridList}
-          cols='3'
+          cols={3}
         >
           <Subheader>메인목록</Subheader>
-          {tilesData.map((tile) => (
+          {this.props.programs.map((tile) => (
             <GridTile
               key={tile.img}
               title={tile.title}
               subtitle={<span>by <b>{tile.author}</b></span>}
               actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+              onClick={()=>this.props.selectProgram(tile)}
             >
               <img src={tile.img} />
             </GridTile>
           ))}
         </GridList>
       </div>
-);
-
+    );
   }
 }
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({selectProgram:selectProgram}, dispatch);
+}
+
+function mapStateToProps(state){
+  return {
+    programs : state.programs
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Programs);

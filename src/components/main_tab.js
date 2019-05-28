@@ -3,8 +3,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 // From https://github.com/oliviertassinari/react-swipeable-views
 // npm install --save react-swipeable-views
 import SwipeableViews from 'react-swipeable-views';
-import TodoSummary from './todoSummary';
-import MaterialMainList from './materialMainList';
+import RecentlyPrograms from './recently_programs';
+import Programs from './programs';
 
 
 const styles = {
@@ -19,7 +19,7 @@ const styles = {
   },
 };
 
-export default class MainMaterialTab extends Component{
+export default class MainTab extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -48,8 +48,8 @@ export default class MainMaterialTab extends Component{
           onChangeIndex={this.handleChange}
         >
           <div>
-            <TodoSummary/>
-            <MaterialMainList/>
+            <RecentlyPrograms/>
+            <Programs/>
           </div>
           <div style={styles.slide}>
             지금까지 진행한 통계내역
