@@ -1,4 +1,6 @@
 export default function (state=null, action){
+  console.log('uuuuu');
+
   switch(action.type){
     case 'PROGRAM_SELECTED':
       return action.payload;

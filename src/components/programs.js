@@ -14,8 +14,8 @@ const styles = {
     justifyContent: 'space-around',
   },
   gridList: {
-    width: 500,
     height: 450,
+    width: 900,
     overflowY: 'auto',
   },
 };
@@ -29,17 +29,18 @@ class Programs extends Component{
     return (
       <div style={styles.root}>
         <GridList
-          cellHeight={180}
           style={styles.gridList}
-          cols={3}
         >
-          <Subheader>메인목록</Subheader>
           {this.props.programs.map((tile) => (
             <GridTile
               key={tile.img}
               title={tile.title}
               subtitle={<span>by <b>{tile.author}</b></span>}
               actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+              actionPosition="left"
+              titlePosition="top"
+              titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+
               onClick={()=>this.props.selectProgram(tile)}
             >
               <img src={tile.img} />
